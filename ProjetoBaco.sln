@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoBaco", "ProjetoBaco\ProjetoBaco.csproj", "{4E7B3250-B619-4806-B704-99221E418BE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{1CC0E9E2-CCB0-4B13-A6B2-20F009DB03A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4E7B3250-B619-4806-B704-99221E418BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E7B3250-B619-4806-B704-99221E418BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E7B3250-B619-4806-B704-99221E418BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC0E9E2-CCB0-4B13-A6B2-20F009DB03A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC0E9E2-CCB0-4B13-A6B2-20F009DB03A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC0E9E2-CCB0-4B13-A6B2-20F009DB03A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC0E9E2-CCB0-4B13-A6B2-20F009DB03A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
