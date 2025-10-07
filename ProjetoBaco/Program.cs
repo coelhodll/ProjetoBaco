@@ -8,13 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-var app = builder.Build();
 builder.Services.AddScoped<IDbConnection>(qualquercoisa => {
     string connection = builder.Configuration.GetConnectionString("DefaultConnection");
     return new NpgsqlConnection(connection);
 });
 
 builder.Services.AddTransient<IRepositoryBase, RepositoryBase>();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
