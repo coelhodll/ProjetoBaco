@@ -17,12 +17,13 @@ namespace Data.Repository
             _dbConnection.Open();
 
             string sqlCreateTablePersonagens = @"CREATE TABLE IF NOT EXISTS Personagens (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Nome TEXT NOT NULL,
-                    TipoDeChakra TEXT NOT NULL,
-                    Vila TEXT NOT NULL,
-                    Vivo INTEGER NOT NULL,
-                    JutsuPrincipal TEXT NOT NULL);";
+                        Id SERIAL PRIMARY KEY,
+                        Nome VARCHAR(255) NOT NULL,
+                        TipoDeChakra VARCHAR(50) NOT NULL,
+                        Vila VARCHAR(100) NOT NULL,
+                        Vivo BOOLEAN NOT NULL DEFAULT TRUE,
+                        JutsuPrincipal VARCHAR(255) NOT NULL
+                    );";
 
             _dbConnection.Execute(sqlCreateTablePersonagens);
             _dbConnection.Close();
