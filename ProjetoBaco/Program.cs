@@ -15,6 +15,8 @@ builder.Services.AddScoped<IDbConnection>(qualquercoisa => {
 
 builder.Services.AddTransient<IRepositoryBase, RepositoryBase>();
 
+builder.Services.AddMvc();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,12 +28,19 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapControllers();
+
 app.MapRazorPages();
+
+app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}");
 
 app.Run();
