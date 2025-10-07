@@ -2,17 +2,18 @@ using Npgsql;
 using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<IDbConnection>(sp =>
+{
+    /* Acessa o arquivo appsetings.json, dentro do objeto connectionstring */
+    string connectionstring = builder.Configuration.GetConnectionString("BancoDoCoelho");
+    return new NpgsqlConnection(connectionstring);
+}
+);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
-builder.Services.AddScoped<IDbConnection>(qualquercoisa =>
-{
-    string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-    return new NpgsqlConnection(connection);
-}
-);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
